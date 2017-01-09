@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>冒泡排序</title>
+</head>
+<body>
+	<script>
+		// 随便定义一个数组
+		var arr=[12,1,35,68,44,98,25,69,72,65]
+		// 设置一个记录轮数的变量
+		var count=0;
+		// 第一个for循环控制比较的轮数
+		for(var i=0;i<arr.length-1;i++){
+			// 假设这一轮是比较完毕的
+			var isSorted=true;
+			count++;
+			// 第二个for循环控制每一轮比较的次数
+			for(var j=0;j<arr.length-1-i;j++){
+				// 判断 如果当前项大于当前项的后一项，那么--交换位置
+				if (arr[j]>arr[j+1]) {
+					var temp=0;
+					temp=arr[j];
+					arr[j]=arr[j+1];
+					arr[j+1]=temp;
+					isSorted=false;
+				}
+			}
+			if (isSorted) {
+				break;
+			}
+		}
+		console.log(arr)
+		console.log(count)
+	</script>
+</body>
+</html>
